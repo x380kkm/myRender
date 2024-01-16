@@ -19,5 +19,9 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
+        pac.Class1.DrawPoint(MyCanvas, 100, 100,10, 10, Colors.Red);
+        pac.Class1.DrawPoint(MyCanvas, 200, 200, 10, 10, Colors.Red);
+        pac.Class1.DrawLine_Attempt1(MyCanvas, Colors.Blue, new System.Numerics.Vector2(100, 100), new System.Numerics.Vector2(200, 200));
     }
+    
 }
