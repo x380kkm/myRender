@@ -1,4 +1,6 @@
-﻿namespace myRender.pac;
+﻿using System.Reflection;
+using myRender.pac;
+namespace myRender.pac;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Shapes;
@@ -7,7 +9,7 @@ using System.Numerics;
 public class Class1
 {
     //绘制点
-    #region MyRegion
+    #region PointDrawing
     public static void DrawPoint(Canvas canvas, int x, int y, int xs = 1, int ys = 1, Color color = default) =>
         canvas.Children.Add(new Rectangle { Fill = new SolidColorBrush(color == default ? Colors.Black : color), Width = xs, Height = ys, Margin = new Thickness(x - xs / 2, y - ys / 2, 0, 0) });
     #endregion
@@ -33,5 +35,7 @@ public class Class1
         while (x0 != x1 || y0 != y1) { DrawPoint(canvas, x0, y0, color: color); int e2 = 2 * err; if (e2 > -dy) { err -= dy; x0 += sx; } if (e2 < dx) { err += dx; y0 += sy; } }
     }
     #endregion
+
+
     
 }
