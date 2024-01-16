@@ -1,0 +1,18 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "myRender", "myRender\myRender.csproj", "{F97CF852-5FF9-4740-ACDB-E901E3E84311}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionFolder1", "SolutionFolder1", "{917AB6EF-F9C1-4DE7-B2D8-EA3D653AC28F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F97CF852-5FF9-4740-ACDB-E901E3E84311}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F97CF852-5FF9-4740-ACDB-E901E3E84311}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F97CF852-5FF9-4740-ACDB-E901E3E84311}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F97CF852-5FF9-4740-ACDB-E901E3E84311}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
