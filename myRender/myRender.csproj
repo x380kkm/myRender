@@ -10,8 +10,12 @@
 
     <ItemGroup>
       <Folder Include="Pac\Tool\Art3D\" />
+      <Folder Include="Pac\Tool\Art3D\_OBJ\" />
       <Folder Include="Pac\Tool\Math\" />
-      <Folder Include="read\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Pac\Pac.csproj" />
     </ItemGroup>
 
 </Project>
