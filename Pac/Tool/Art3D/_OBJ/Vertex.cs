@@ -98,7 +98,7 @@ public class Vertex(float x, float y, float z)
 
     public static bool operator ==(Vertex a, Vertex b)
     {
-        return Math.Abs(a.X - b.X) < 0.0001 && Math.Abs(a.Y - b.Y) < 0.0001 && Math.Abs(a.Z - b.Z) < 0.0001;
+        return System.Math.Abs(a.X - b.X) < 0.0001 && System.Math.Abs(a.Y - b.Y) < 0.0001 && System.Math.Abs(a.Z - b.Z) < 0.0001;
     }
 
     public static bool operator !=(Vertex a, Vertex b)
