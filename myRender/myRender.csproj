@@ -2,10 +2,16 @@
 
     <PropertyGroup>
         <OutputType>WinExe</OutputType>
-        <TargetFramework>net8.0-windows</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <UseWPF>true</UseWPF>
+        <TargetFramework>net8.0-windows</TargetFramework>
     </PropertyGroup>
+
+    <ItemGroup>
+      <Folder Include="Pac\Tool\Art3D\" />
+      <Folder Include="Pac\Tool\Math\" />
+      <Folder Include="read\" />
+    </ItemGroup>
 
 </Project>

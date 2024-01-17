@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "myRender", "myRender\myRender.csproj", "{F97CF852-5FF9-4740-ACDB-E901E3E84311}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject1", "TestProject1\TestProject1.csproj", "{0F6BD714-9E6C-4E38-B392-FA81310F403A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pac", "Pac\Pac.csproj", "{C267DD58-A090-4604-8CA1-605472AE772E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +16,13 @@ Global
 		{F97CF852-5FF9-4740-ACDB-E901E3E84311}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F97CF852-5FF9-4740-ACDB-E901E3E84311}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F97CF852-5FF9-4740-ACDB-E901E3E84311}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F6BD714-9E6C-4E38-B392-FA81310F403A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F6BD714-9E6C-4E38-B392-FA81310F403A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F6BD714-9E6C-4E38-B392-FA81310F403A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F6BD714-9E6C-4E38-B392-FA81310F403A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C267DD58-A090-4604-8CA1-605472AE772E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C267DD58-A090-4604-8CA1-605472AE772E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C267DD58-A090-4604-8CA1-605472AE772E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C267DD58-A090-4604-8CA1-605472AE772E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
