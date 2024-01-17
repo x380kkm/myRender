@@ -11,6 +11,7 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
+        //draw line
         var modelRenderer = new ModelRenderer(MyCanvas);
         modelRenderer.Draw3DModel("read/african_head.obj",300,300);
         
