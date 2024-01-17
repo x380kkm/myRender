@@ -17,7 +17,7 @@ public partial class MainWindow : Window
         modelRenderer.Draw3DModel("read/african_head.obj",300,300);
         */
         //DrawTriangle
-        Class2.DrawTriangle(MyCanvas, Colors.Black, new Vector2(100, 100), new Vector2(110, 100), new Vector2(105, 110));
+        Class2.DrawTriangle(MyCanvas, Colors.Red, new Vector2(100, 100), new Vector2(210, 400), new Vector2(305, 210));
         
     }
     
