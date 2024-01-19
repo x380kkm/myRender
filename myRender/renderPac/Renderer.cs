@@ -8,38 +8,42 @@ namespace myRender.renderPac
     {
         private WriteableBitmap _bitmap;
         private Color[,] _colorData;
-        private float[,] _depthBuffer; // 新增的深度缓冲
+        private float[,] _depthBuffer; 
 
         public Renderer(int width, int height)
         {
             _bitmap = new WriteableBitmap(width, height, 24, 24, PixelFormats.Bgra32, null);
             _colorData = new Color[width, height];
-            _depthBuffer = new float[width, height]; // 初始化深度缓冲
+            _depthBuffer = new float[width, height]; 
             for (int x = 0; x < width; x++)
             {
                 for (int y = 0; y < height; y++)
                 {
-                    _depthBuffer[x, y] = float.MaxValue; // 将深度缓冲的初始值设置为最大值
+                    _depthBuffer[x, y] = float.MaxValue; 
                 }
             }
         }
 
         public ImageSource ImageSource => _bitmap;
 
-        // 修改 DrawPoint 方法，添加一个深度参数
-        public void DrawPoint(int x, int y, Color color, float depth = 0)
+        public void DrawPoint(int x, int y, float depth)
         {
             if (x < 0 || x >= _colorData.GetLength(0) || y < 0 || y >= _colorData.GetLength(1))
             {
                 return;
             }
 
-            // 只有当新的深度值小于等于深度缓冲中的值时，才更新像素的颜色和深度值
             if (depth <= _depthBuffer[x, y])
             {
-                _colorData[x, y] = color;
+                _colorData[x, y] = DepthToColor(depth);
                 _depthBuffer[x, y] = depth;
             }
+        }
+
+        private Color DepthToColor(float depth)
+        {
+            byte colorValue = (byte)(255 * (1 - depth));
+            return Color.FromRgb(colorValue, colorValue, colorValue);
         }
 
         public void Render()

@@ -1,42 +1,39 @@
 ﻿using System.Numerics;
-using System.Windows.Controls;
 using System.Windows.Media;
 using Pac.Tool.Art3D._OBJ;
-namespace myRender.renderPac;
-/*
-public class ModelRenderer
+using Pac.Tool.Math;
+using myRender.renderPac.myColor;
+
+namespace myRender.renderPac
 {
-    private Canvas _canvas;
-    
-    public ModelRenderer(Canvas canvas)
+    public class ModelRenderer
     {
-        this._canvas = canvas;
-        _canvas.Background = new SolidColorBrush(Colors.Black);
-    }
+        private Class2 _class2;
+        private Vector2 _screenSize;
+        private ObjModel _model;
 
-    public void Draw3DModel(string filePath,int xSize = 1,int ySize = 1)
-    {
-        var objFileReader = new ObjFileReader();
-        var model = objFileReader.ReadFile(filePath);
-
-        float dX =  model.Vertices.Max(v => v.X) - model.Vertices.Min(v => v.X);
-        float dY =  model.Vertices.Max(v => v.Y) - model.Vertices.Min(v => v.Y);
-        _canvas.MaxWidth =  dX * xSize;
-        _canvas.MaxHeight = dY * ySize;
-        
-        foreach (var face in model.Groups.SelectMany(group => group.Faces))
+        public ModelRenderer(Renderer renderer, int screenWidth, int screenHeight)
         {
-            for (var i = 0; i < face.Vertices.Count; i++)
+            _class2 = new Class2(renderer);
+            _screenSize = new Vector2(screenWidth, screenHeight);
+        }
+
+        public void RenderModel(ObjModel model)
+        {
+            _model = model; // 设置_model字段的值
+            foreach (var face in model.Groups[1].Faces)
             {
-                var startVertexIndex = face.Vertices[i].Vertex - 1;
-                var endVertexIndex = face.Vertices[(i + 1) % face.Vertices.Count].Vertex - 1;
+                var vertices = face.Vertices.Select(v => model.Vertices[v.Vertex - 1]).ToList();
+                var triangle3D = new Triangle3D(
+                    new Vector3(vertices[0].X, vertices[0].Y, vertices[0].Z),
+                    new Vector3(vertices[1].X, vertices[1].Y, vertices[1].Z),
+                    new Vector3(vertices[2].X, vertices[2].Y, vertices[2].Z)
+                );
 
-                var startVertex = model.Vertices[startVertexIndex];
-                var endVertex = model.Vertices[endVertexIndex];
-
-                Class1.DrawLine(_canvas,Colors.White,new Vector2((int)((0.5*dX-startVertex.X) * xSize),(int) ((0.5*dY-startVertex.Y) * ySize)), new Vector2((int)((0.5*dX-endVertex.X) * xSize),(int) ((0.5*dY-endVertex.Y) * ySize)));
+                _class2.FillTriangle3D(triangle3D, _screenSize);
             }
         }
+
+        
     }
 }
-*/

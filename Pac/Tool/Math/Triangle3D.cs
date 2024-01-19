@@ -25,21 +25,26 @@ namespace Pac.Tool.Math
             PointC = TransformToUnitCube(points[2]);
         
         }
-
         private Vector3 TransformToUnitCube(Vector3 point)
         {
+            // 计算模型的中心
+            Vector3 center = (Min3D + Max3D) / 2;
+
+            // 将模型的原点移动到其几何中心
+            point -= center;
+
+            // 将模型的尺寸缩放到单位立方体
             return new Vector3(
                 (point.X - Min3D.X) / (Max3D.X - Min3D.X),
                 (point.Y - Min3D.Y) / (Max3D.Y - Min3D.Y),
                 (point.Z - Min3D.Z) / (Max3D.Z - Min3D.Z)
             );
         }
-
         public Triangle ProjectTo2D(Vector2 max2D)
         {
             Vector2 Project(Vector3 point)
             {
-                return new Vector2(point.X * max2D.X, point.Y * max2D.Y);
+                return new Vector2((point.X ) * max2D.X, (point.Y ) * max2D.Y);
             }
 
             return new Triangle(Project(PointA), Project(PointB), Project(PointC));
@@ -47,26 +52,16 @@ namespace Pac.Tool.Math
 
         public float GetDepth(Vector2 point)
         {
-            // 计算三角形的面积
-            float Area(Vector2 a, Vector2 b, Vector2 c)
-            {
-                return System.Math.Abs((a.X*(b.Y-c.Y) + b.X*(c.Y-a.Y) + c.X*(a.Y-b.Y)) / 2.0f);
-            }
+            // 计算三角形的中点
+            Vector3 center = (PointA + PointB + PointC) / 3;
 
-            // 计算屏幕空间的点与三角形的三个顶点构成的三个小三角形的面积
-            var triangle2D = ProjectTo2D(new Vector2(1, 1));
-            var a1 = Area(point, triangle2D.PointB, triangle2D.PointC);
-            var a2 = Area(triangle2D.PointA, point, triangle2D.PointC);
-            var a3 = Area(triangle2D.PointA, triangle2D.PointB, point);
+            // 获取中点的Z坐标
+            float z = center.Z;
 
-            // 计算三角形的面积
-            var totalArea = Area(triangle2D.PointA, triangle2D.PointB, triangle2D.PointC);
+            // 将Z坐标在模型空间的最大Z和最小Z之间进行归一化
+            float normalizedZ = (z - Min3D.Z) / (Max3D.Z - Min3D.Z);
 
-            // 计算深度
-            float depth = (a1 * PointA.Z + a2 * PointB.Z + a3 * PointC.Z) / totalArea;
-
-            // 将深度值限制在 [0, 1] 范围内
-            return System.Math.Max(0, System.Math.Min(1, depth));
+            return normalizedZ;
         }
     }
 }
