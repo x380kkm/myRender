@@ -21,7 +21,7 @@ namespace myRender.renderPac
 
             while (true)
             {
-                _renderer.DrawPoint(x0, y0, color);
+                _renderer.DrawPoint(x0, y0, 0);
 
                 if (x0 == x1 && y0 == y1) break;
 

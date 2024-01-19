@@ -51,9 +51,9 @@ public class ObjFileReader
         Vertex ParseVertex(string[] parts)
         {
             return new Vertex(
-                float.Parse(parts[1], CultureInfo.InvariantCulture),
-                float.Parse(parts[2], CultureInfo.InvariantCulture),
-                float.Parse(parts[3], CultureInfo.InvariantCulture));
+                -float.Parse(parts[1], CultureInfo.InvariantCulture),
+                -float.Parse(parts[2], CultureInfo.InvariantCulture),
+                -float.Parse(parts[3], CultureInfo.InvariantCulture));
         }
 
         VertexTexture ParseVertexTexture(string[] parts)

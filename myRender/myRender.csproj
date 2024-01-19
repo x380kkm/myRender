@@ -16,4 +16,8 @@
       <Content Include="bin\Debug\net8.0-windows\read\african_head.obj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Test\" />
+    </ItemGroup>
+
 </Project>
