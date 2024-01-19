@@ -3,6 +3,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using Pac.Tool.Art3D._OBJ;
 namespace myRender.renderPac;
+/*
 public class ModelRenderer
 {
     private Canvas _canvas;
@@ -38,3 +39,4 @@ public class ModelRenderer
         }
     }
 }
+*/

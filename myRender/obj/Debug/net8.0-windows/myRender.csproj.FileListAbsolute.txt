@@ -6,7 +6,6 @@ C:\Users\30705\RiderProjects\myRender\myRender\bin\Debug\net8.0-windows\myRender
 C:\Users\30705\RiderProjects\myRender\myRender\obj\Debug\net8.0-windows\MainWindow.g.cs
 C:\Users\30705\RiderProjects\myRender\myRender\obj\Debug\net8.0-windows\App.g.cs
 C:\Users\30705\RiderProjects\myRender\myRender\obj\Debug\net8.0-windows\myRender_MarkupCompile.cache
-C:\Users\30705\RiderProjects\myRender\myRender\obj\Debug\net8.0-windows\myRender_MarkupCompile.lref
 C:\Users\30705\RiderProjects\myRender\myRender\obj\Debug\net8.0-windows\MainWindow.baml
 C:\Users\30705\RiderProjects\myRender\myRender\obj\Debug\net8.0-windows\myRender.g.resources
 C:\Users\30705\RiderProjects\myRender\myRender\obj\Debug\net8.0-windows\myRender.GeneratedMSBuildEditorConfig.editorconfig

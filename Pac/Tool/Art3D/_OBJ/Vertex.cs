@@ -23,7 +23,7 @@ public class Vertex(float x, float y, float z)
     {
         unchecked // Overflow is fine, just wrap
         {
-            int hash = 17;
+            var hash = 17;
             hash = hash * 23 + X.GetHashCode();
             hash = hash * 23 + Y.GetHashCode();
             hash = hash * 23 + Z.GetHashCode();
