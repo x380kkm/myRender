@@ -12,13 +12,13 @@ namespace myRender.renderPac
 
         public Renderer(int width, int height)
         {
-            _bitmap = new WriteableBitmap(width, height, 24, 24, PixelFormats.Bgra32, null);
+            _bitmap = new WriteableBitmap(width, height, 12, 12, PixelFormats.Bgr32, null);
             _colorData = new Color[width, height];
             _depthBuffer = new float[width, height]; 
             for (int x = 0; x < width; x++)
             {
                 for (int y = 0; y < height; y++)
-                {
+                {   
                     _depthBuffer[x, y] = float.MaxValue; 
                 }
             }
@@ -42,7 +42,7 @@ namespace myRender.renderPac
 
         private Color DepthToColor(float depth)
         {
-            byte colorValue = (byte)(100 + depth * 50); // Map depth to a value between 100 and 150
+            byte colorValue = (byte)(255-255*depth ); 
             return Color.FromRgb(colorValue, colorValue, colorValue);
         }
         

@@ -28,16 +28,22 @@ namespace Pac.Tool.Math
         private Vector3 TransformToUnitCube(Vector3 point)
         {
             // 计算模型的中心
-            Vector3 center = (Min3D + Max3D) / 2;
+           // Vector3 center = (Min3D + Max3D) / 2;
 
             // 将模型的原点移动到其几何中心
-            point -= center;
+            //point -= center;
+            float maxAxisLength = System.Math.Max(Max3D.X - Min3D.X, System.Math.Max(Max3D.Y - Min3D.Y, Max3D.Z - Min3D.Z));
 
-            // 将模型的尺寸缩放到单位立方体
+            // 计算缩放比例，保持原有比例
+            float scaleX = (Max3D.X - Min3D.X) / maxAxisLength;
+            float scaleY = (Max3D.Y - Min3D.Y) / maxAxisLength;
+            float scaleZ = (Max3D.Z - Min3D.Z) / maxAxisLength;
+
+            // 将模型的尺寸缩放到新的空间内，并保持比例
             return new Vector3(
-                (point.X - Min3D.X) / (Max3D.X - Min3D.X),
-                (point.Y - Min3D.Y) / (Max3D.Y - Min3D.Y),
-                (point.Z - Min3D.Z) / (Max3D.Z - Min3D.Z)
+                (point.X - Min3D.X) / (Max3D.X - Min3D.X) * scaleX,
+                (point.Y - Min3D.Y) / (Max3D.Y - Min3D.Y) * scaleY,
+                (point.Z - Min3D.Z) / (Max3D.Z - Min3D.Z) * scaleZ
             );
         }
         public Triangle ProjectTo2D(Vector2 max2D)
