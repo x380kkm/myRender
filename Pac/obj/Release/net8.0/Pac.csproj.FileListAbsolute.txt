@@ -1,0 +1,12 @@
+C:\Users\30705\RiderProjects\myRender\Pac\bin\Release\net8.0\Pac.deps.json
+C:\Users\30705\RiderProjects\myRender\Pac\bin\Release\net8.0\Pac.dll
+C:\Users\30705\RiderProjects\myRender\Pac\bin\Release\net8.0\Pac.pdb
+C:\Users\30705\RiderProjects\myRender\Pac\obj\Release\net8.0\Pac.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\30705\RiderProjects\myRender\Pac\obj\Release\net8.0\Pac.AssemblyInfoInputs.cache
+C:\Users\30705\RiderProjects\myRender\Pac\obj\Release\net8.0\Pac.AssemblyInfo.cs
+C:\Users\30705\RiderProjects\myRender\Pac\obj\Release\net8.0\Pac.csproj.CoreCompileInputs.cache
+C:\Users\30705\RiderProjects\myRender\Pac\obj\Release\net8.0\Pac.sourcelink.json
+C:\Users\30705\RiderProjects\myRender\Pac\obj\Release\net8.0\Pac.dll
+C:\Users\30705\RiderProjects\myRender\Pac\obj\Release\net8.0\refint\Pac.dll
+C:\Users\30705\RiderProjects\myRender\Pac\obj\Release\net8.0\Pac.pdb
+C:\Users\30705\RiderProjects\myRender\Pac\obj\Release\net8.0\ref\Pac.dll
