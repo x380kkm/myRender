@@ -25,7 +25,7 @@ namespace Pac.Tool.Math
         public Triangle(Triangle3D triangle3D)
         {
             _triangle3D = triangle3D;
-            var triangle2D = triangle3D.ProjectTo2D(new Vector2(1, 1));
+            var triangle2D = triangle3D.ProjectTo2D(new Vector2(1, 1),);
            // // 对三个顶点按照y坐标进行排序
            // var points = new[] { triangle2D.PointA, triangle2D.PointB, triangle2D.PointC }
            //     .OrderBy(p => p.Y)

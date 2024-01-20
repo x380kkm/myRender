@@ -79,16 +79,5 @@ namespace myRender.renderPac
                 }
             }
         }
-        public void Clear()
-        {
-            for (int x = 0; x < _colorData.GetLength(0); x++)
-            {
-                for (int y = 0; y < _colorData.GetLength(1); y++)
-                {
-                    _colorData[x, y] = Colors.Black;
-                    _depthBuffer[x, y] = float.MaxValue;
-                }
-            }
-        }
     }
 }

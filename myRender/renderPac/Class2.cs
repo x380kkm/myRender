@@ -22,7 +22,7 @@ namespace myRender.renderPac
 
         public void FillTriangle3D(Triangle3D triangle3D, Vector2 max2D)
         {
-            var triangle = triangle3D.ProjectTo2D(max2D);
+            var triangle = triangle3D.ProjectTo2D(max2D, _renderer._ob); // 添加观察者的位置作为参数
             int yStart = (int)Math.Floor(triangle.PointA.Y);
             int yEnd = (int)Math.Ceiling(triangle.PointC.Y);
 
