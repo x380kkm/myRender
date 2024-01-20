@@ -11,11 +11,13 @@ namespace myRender.renderPac
         private Class2 _class2;
         private Vector2 _screenSize;
         private ObjModel _model;
+        private Renderer _renderer; // 添加的_renderer字段
 
 #pragma warning disable CS8618 // 在退出构造函数时，不可为 null 的字段必须包含非 null 值。请考虑声明为可以为 null。
         public ModelRenderer(Renderer renderer, int screenWidth, int screenHeight, Vector3 lightVector, TGADealer tgaDealer)
 #pragma warning restore CS8618 // 在退出构造函数时，不可为 null 的字段必须包含非 null 值。请考虑声明为可以为 null。
         {
+            _renderer = renderer; // 初始化_renderer字段
             _class2 = new Class2(renderer, lightVector, tgaDealer);
             _screenSize = new Vector2(screenWidth, screenHeight);
         }

@@ -71,11 +71,15 @@ namespace Pac.Tool.Math
                 (point.Z - Min3D.Z) / (Max3D.Z - Min3D.Z) * scaleZ
             );
         }
-        public Triangle ProjectTo2D(Vector2 max2D)
+        public Triangle ProjectTo2D(Vector2 max2D, Vector3 observerPosition)
         {
             Vector2 Project(Vector3 point)
             {
-                return new Vector2((point.X ) * max2D.X, (point.Y ) * max2D.Y);
+                // 透视投影的公式为：x' = x / (z + 1 - observerPosition.Z), y' = y / (z + 1 - observerPosition.Z)
+                // 这里我们假设观察者位于observerPosition，所以z+1-observerPosition.Z就是物体离观察者的距离
+                // 为了防止除以0，我们给z+1-observerPosition.Z加上一个小的偏移量
+                float z = point.Z + 1 - observerPosition.Z + 1e-7f;
+                return new Vector2((point.X / z + 1) * 0.5f * max2D.X, (point.Y / z + 1) * 0.5f * max2D.Y);
             }
 
             return new Triangle(Project(PointA), Project(PointB), Project(PointC));
