@@ -50,7 +50,7 @@ namespace Pac.Tool.Math
             return new Triangle(Project(PointA), Project(PointB), Project(PointC));
         }
 
-        public float GetDepth(Vector2 point)
+        public float GetDepth()
         {
             // 计算三角形的中点
             Vector3 center = (PointA + PointB + PointC) / 3;
@@ -61,6 +61,15 @@ namespace Pac.Tool.Math
             // 将Z坐标在模型空间的最大Z和最小Z之间进行归一化
             float normalizedZ = (z - Min3D.Z) / (Max3D.Z - Min3D.Z);
 
+            // 确保normalizedZ在0到1之间
+            if (normalizedZ < 0)
+            {
+                return 0;
+            }
+            else if (normalizedZ > 1)
+            {
+                return 1;
+            }
             return normalizedZ;
         }
     }

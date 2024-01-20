@@ -42,10 +42,10 @@ namespace myRender.renderPac
 
         private Color DepthToColor(float depth)
         {
-            byte colorValue = (byte)(255 * (1 - depth));
+            byte colorValue = (byte)(100 + depth * 50); // Map depth to a value between 100 and 150
             return Color.FromRgb(colorValue, colorValue, colorValue);
         }
-
+        
         public void Render()
         {
             for (int x = 0; x < _colorData.GetLength(0); x++)

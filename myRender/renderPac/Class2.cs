@@ -23,19 +23,33 @@ namespace myRender.renderPac
 
             for (int y = yStart; y <= yEnd; y++)
             {
-                if (y < triangle.PointB.Y)
+                if (y < triangle.PointB.Y - 2)
                 {
                     int xa = (int)Interpolate(triangle.PointA.X, triangle.PointB.X, triangle.PointA.Y, triangle.PointB.Y, y);
                     int xb = (int)Interpolate(triangle.PointA.X, triangle.PointC.X, triangle.PointA.Y, triangle.PointC.Y, y);
-                    
+
                     DrawHorizontalLine(xa, xb, y, triangle3D, max2D);
                 }
-                else
+                else if (y > triangle.PointB.Y + 2)
                 {
                     int xa = (int)Interpolate(triangle.PointB.X, triangle.PointC.X, triangle.PointB.Y, triangle.PointC.Y, y);
                     int xb = (int)Interpolate(triangle.PointA.X, triangle.PointC.X, triangle.PointA.Y, triangle.PointC.Y, y);
-                    
+
                     DrawHorizontalLine(xa, xb, y, triangle3D, max2D);
+                }
+                else // y is in the range of PointB.Y +- 2
+                {
+                    // Method 1
+                    int xa1 = (int)Interpolate(triangle.PointA.X, triangle.PointB.X, triangle.PointA.Y, triangle.PointB.Y, y);
+                    int xb1 = (int)Interpolate(triangle.PointA.X, triangle.PointC.X, triangle.PointA.Y, triangle.PointC.Y, y);
+
+                    DrawHorizontalLine(xa1, xb1, y, triangle3D, max2D);
+
+                    // Method 2
+                    int xa2 = (int)Interpolate(triangle.PointB.X, triangle.PointC.X, triangle.PointB.Y, triangle.PointC.Y, y);
+                    int xb2 = (int)Interpolate(triangle.PointA.X, triangle.PointC.X, triangle.PointA.Y, triangle.PointC.Y, y);
+
+                    DrawHorizontalLine(xa2, xb2, y, triangle3D, max2D);
                 }
             }
         }
@@ -61,7 +75,7 @@ namespace myRender.renderPac
                 // 检查点是否在三角形内
                 if (Triangle.Contains(new Vector2(x, y), triangle))
                 {
-                    float depth = triangle3D.GetDepth(new Vector2(x, y));
+                    float depth = triangle3D.GetDepth();
                     _renderer.DrawPoint(x, y, depth);
                 }
             }

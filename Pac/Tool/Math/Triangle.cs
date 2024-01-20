@@ -73,7 +73,7 @@ namespace Pac.Tool.Math
             float invDenom = 1 / (dot00 * dot11 - dot01 * dot01);
             float u = (dot11 * dot02 - dot01 * dot12) * invDenom;
             float v = (dot00 * dot12 - dot01 * dot02) * invDenom;
-
+            float epsilon = 0.01f; // 定义一个小的偏移量
             return (u >= 0) && (v >= 0) && (u + v <= 1);
         }
 
@@ -89,9 +89,9 @@ namespace Pac.Tool.Math
         }
 
         // 新增的方法，返回三角形对应点的深度
-        public float GetDepth(Vector2 point)
+        public float GetDepth()
         {
-            return _triangle3D.GetDepth(point);
+            return _triangle3D.GetDepth();
         }
     }
 }
