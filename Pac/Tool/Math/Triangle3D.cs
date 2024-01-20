@@ -62,11 +62,7 @@ namespace Pac.Tool.Math
             float normalizedZ = (z - Min3D.Z) / (Max3D.Z - Min3D.Z);
 
             // 确保normalizedZ在0到1之间
-            if (normalizedZ < 0)
-            {
-                return 0;
-            }
-            else if (normalizedZ > 1)
+             if (normalizedZ > 1)
             {
                 return 1;
             }
