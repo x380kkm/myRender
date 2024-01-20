@@ -8,7 +8,18 @@
     <Grid>
         <Canvas x:Name="MyCanvas" Width="800" Height="800">
             <Image x:Name="MyImage" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            
+            <Button x:Name="RotateUpButton" Content="Rotate Up" Width="100" Height="30" Click="RotateUpButton_Click" Canvas.Left="0" Canvas.Top="350"/>
+            <Button x:Name="RotateDownButton" Content="Rotate Down" Width="100" Height="30" Click="RotateDownButton_Click" Canvas.Left="0" Canvas.Top="400"/>
+            <Button x:Name="RotateLeftButton" Content="Rotate Left" Width="100" Height="30" Click="RotateLeftButton_Click" Canvas.Left="0" Canvas.Top="450"/>
+            <Button x:Name="RotateRightButton" Content="Rotate Right" Width="100" Height="30" Click="RotateRightButton_Click" Canvas.Left="0" Canvas.Top="500"/>
+
+            <Button x:Name="MoveUpButton" Content="Move Up" Width="100" Height="30" Click="MoveUpButton_Click" Canvas.Left="700" Canvas.Top="350"/>
+            <Button x:Name="MoveDownButton" Content="Move Down" Width="100" Height="30" Click="MoveDownButton_Click" Canvas.Left="700" Canvas.Top="400"/>
+            <Button x:Name="MoveLeftButton" Content="Move Left" Width="100" Height="30" Click="MoveLeftButton_Click" Canvas.Left="700" Canvas.Top="450"/>
+            <Button x:Name="MoveRightButton" Content="Move Right" Width="100" Height="30" Click="MoveRightButton_Click" Canvas.Left="700" Canvas.Top="500"/>
+
+            <Button x:Name="ScaleUpButton" Content="Scale Up" Width="100" Height="30" Click="ScaleUpButton_Click" Canvas.Left="350" Canvas.Top="0"/>
+            <Button x:Name="ScaleDownButton" Content="Scale Down" Width="100" Height="30" Click="ScaleDownButton_Click" Canvas.Left="450" Canvas.Top="0"/>
         </Canvas>
     </Grid>
 </Window>
