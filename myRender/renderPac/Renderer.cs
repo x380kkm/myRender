@@ -38,13 +38,23 @@ namespace myRender.renderPac
                 _colorData[x, y] = DepthToColor(depth);
                 _depthBuffer[x, y] = depth;
             }
+ 
         }
 
         private Color DepthToColor(float depth)
         {
-            byte colorValue = (byte)(255 * (1 - depth));
-            return Color.FromRgb(colorValue, colorValue, colorValue);
+            int hash = depth.GetHashCode();
+            Random random = new Random(hash);
+            byte redValue = (byte)(255-255 * Math.Pow(depth, 0.8) * random.NextDouble());
+            byte greenValue = (byte)(255-255 * Math.Pow(1 - depth, 0.8) * random.NextDouble());
+            byte blueValue = (byte)(255-255 * Math.Pow(depth, 0.6) * random.NextDouble());
+            return Color.FromRgb(redValue, greenValue, blueValue);
         }
+     //private Color DepthToColor(float depth)
+     //{
+     //    byte colorValue = (byte)((byte)255 - Math.Pow(depth, 1.4)*255);
+     //    return Color.FromRgb(colorValue, colorValue, colorValue);
+     //}
 
         public void Render()
         {

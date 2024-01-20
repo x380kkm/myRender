@@ -4,11 +4,11 @@ using Pac.Tool.Math;
 
 namespace myRender.renderPac
 {
-    public class Class2
+    public class rendererTest
     {
         private Renderer _renderer;
 
-        public Class2(Renderer renderer)
+        public rendererTest(Renderer renderer)
         {
             this._renderer = renderer;
         }
@@ -16,33 +16,33 @@ namespace myRender.renderPac
         public void FillTriangle3D(Triangle3D triangle3D, Vector2 max2D)
         {
             var triangle = triangle3D.ProjectTo2D(max2D);
+            FillTriangle2D(triangle);
+        }
+
+        public void FillTriangle2D(Triangle triangle)
+        {
             for (int y = (int)triangle.PointA.Y; y <= triangle.PointC.Y; y++)
             {
                 if (y < triangle.PointB.Y)
                 {
                     float xa = Interpolate(triangle.PointA.X, triangle.PointB.X, triangle.PointA.Y, triangle.PointB.Y, y);
                     float xb = Interpolate(triangle.PointA.X, triangle.PointC.X, triangle.PointA.Y, triangle.PointC.Y, y);
-                    DrawHorizontalLine((int)System.Math.Round(xa), (int)System.Math.Round(xb), y, triangle3D);
+                    DrawHorizontalLine((int)System.Math.Round(xa), (int)System.Math.Round(xb), y);
                 }
                 else
                 {
                     float xa = Interpolate(triangle.PointB.X, triangle.PointC.X, triangle.PointB.Y, triangle.PointC.Y, y);
                     float xb = Interpolate(triangle.PointA.X, triangle.PointC.X, triangle.PointA.Y, triangle.PointC.Y, y);
-                    DrawHorizontalLine((int)System.Math.Round(xa), (int)System.Math.Round(xb), y, triangle3D);
+                    DrawHorizontalLine((int)System.Math.Round(xa), (int)System.Math.Round(xb), y);
                 }
             }
         }
-        
-        private void DrawHorizontalLine(int x1, int x2, int y, Triangle3D triangle3D)
+
+        private void DrawHorizontalLine(int x1, int x2, int y)
         {
-            if (x1 > x2)
-            {
-                (x1, x2) = (x2, x1);
-            }
             for (int x = x1; x <= x2; x++)
             {
-                float depth = triangle3D.GetDepth(new Vector2(x, y));
-                _renderer.DrawPoint(x, y, depth);
+                _renderer.DrawPoint(x, y, 0);
             }
         }
 
