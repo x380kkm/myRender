@@ -1,5 +1,6 @@
 ﻿using System.Numerics;
 using System.Windows.Media;
+using myRender.renderPac.myColor;
 using Pac.Tool.Math;
 
 namespace myRender.renderPac
@@ -8,12 +9,14 @@ namespace myRender.renderPac
     {
         private Renderer _renderer;
         private Vector3 _lightVector;
+        private TGADealer _tgaDealer;
        //private Class1 _class1;
 
-        public Class2(Renderer renderer,Vector3 lightVector)
+        public Class2(Renderer renderer,Vector3 lightVector,TGADealer tgaDealer)
         {
             this._renderer = renderer;
             this._lightVector = lightVector;
+            this._tgaDealer = tgaDealer;
             //this._class1 = new Class1(_renderer);
         }
 
@@ -77,8 +80,20 @@ namespace myRender.renderPac
                 // 检查点是否在三角形内
                 if (Triangle.Contains(new Vector2(x, y), triangle))
                 {
+                    // 获取权重向量
+                    Vector3 weight = triangle.GetCoord(new Vector2(x, y));
+
+                    // 获取UV坐标
+                    Vector2 uv = triangle3D.UVmap(weight);
+
+                    // 获取具体颜色
+                    Color color = _tgaDealer.GetPixelColorFromUV(uv);
+
+                    // 计算深度
                     float depth = triangle3D.GetDepth();
-                    _renderer.DrawPoint(x, y, depth,triangle3D.GetNormal(),_lightVector);
+
+                    // 绘制点
+                    _renderer.DrawPoint(x, y, depth, triangle3D.GetNormal(), _lightVector, color);
                 }
             }
         }

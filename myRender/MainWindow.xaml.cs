@@ -6,6 +6,7 @@ using myRender.renderPac.myColor;
 using Pac.Tool.Math;
 using Pac.Tool.Art3D._OBJ;
 
+
 namespace myRender
 {
     /// <summary>
@@ -16,7 +17,10 @@ namespace myRender
         public MainWindow()
         {
             InitializeComponent();
-            var renderer = new Renderer((int)MyCanvas.Width, (int)MyCanvas.Height);
+            var objFileReader = new ObjFileReader();
+            var model = objFileReader.ReadFile("read/african_head.obj");
+            var tgadealer = new TGADealer ("read/african_head_diffuse.tga");
+            var renderer = new Renderer((int)MyCanvas.Width, (int)MyCanvas.Height,tgadealer);
            //// 定义角度
            //double theta = Math.PI / 4; //
            //double phi = Math.PI / -6; // 
@@ -28,14 +32,13 @@ namespace myRender
            //    (float)Math.Cos(theta)
            //);
            Vector3 lightVector = new Vector3(0, 0,1);
-            lightVector = Vector3.Normalize(lightVector);
+           lightVector = Vector3.Normalize(lightVector);
 
-            var class2 = new Class2(renderer, lightVector);
+            var class2 = new Class2(renderer, lightVector,tgadealer);
             MyImage.Source = renderer.ImageSource; // 将 Renderer 对象的 ImageSource 属性设置为 Image 元素的 Source 属性
 
             // 创建一个 ObjFileReader 实例并读取 .obj 文件
-            var objFileReader = new ObjFileReader();
-            var model = objFileReader.ReadFile("C:\\Users\\30705\\RiderProjects\\myRender\\myRender\\bin\\Debug\\net8.0-windows\\read\\african_head.obj");
+
             
             // 计算模型的最大和最小顶点
             Vector3 min = new Vector3(float.MaxValue, float.MaxValue, float.MaxValue);
@@ -60,7 +63,7 @@ namespace myRender
 
             // 创建一个 ModelRenderer 实例并渲染模型
             var modelRenderer =
-                new ModelRenderer(renderer, (int)MyCanvas.Width / 8, (int)MyCanvas.Height / 8, lightVector);
+                new ModelRenderer(renderer, (int)MyCanvas.Width / 8, (int)MyCanvas.Height / 8, lightVector,tgadealer);
             modelRenderer.RenderModel(model);
 
             // 调用 Renderer 的 Render 方法来更新图像

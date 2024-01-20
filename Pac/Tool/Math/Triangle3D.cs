@@ -24,28 +24,30 @@ namespace Pac.Tool.Math
             OriginalPointC = pointC;
             TextureU = textureU;
             TextureV = textureV;
+            float[] tX = [textureU.X, textureV.X];
+            float[] tY = [textureU.Y, textureV.Y];
+            float[] tZ = [textureU.Z, textureV.Z];
 
             
             // 创建一个包含顶点和对应的纹理坐标的临时数据结构
             var pointsWithTextures = new[]
             {
-                new { Point = pointA, Texture = textureU },
-                new { Point = pointB, Texture = textureV },
-                new { Point = pointC, Texture = textureV }
+                new { Point = pointA, Texture = tX },
+                new { Point = pointB, Texture = tY },
+                new { Point = pointC, Texture = tZ }
             };
 
             // 对这个数据结构进行排序
             var sortedPointsWithTextures = pointsWithTextures.OrderBy(p => p.Point.Y).ToArray();
 
-            // 将排序后的顶点和纹理坐标分别赋值给PointA、PointB、PointC和TextureU、TextureV
+            // 将排序后的顶点和纹理坐标分别赋值给PointA、PointB、PointC
             PointA = TransformToUnitCube(sortedPointsWithTextures[0].Point);
-            TextureU = sortedPointsWithTextures[0].Texture;
-
             PointB = TransformToUnitCube(sortedPointsWithTextures[1].Point);
-            TextureV = sortedPointsWithTextures[1].Texture;
-
             PointC = TransformToUnitCube(sortedPointsWithTextures[2].Point);
-            TextureV = sortedPointsWithTextures[2].Texture;
+            
+            TextureU = new Vector3(tX[0], tY[0], tZ[0]);
+            TextureV = new Vector3(tX[1], tY[1], tZ[1]);
+
         
         }
         private Vector3 TransformToUnitCube(Vector3 point)
