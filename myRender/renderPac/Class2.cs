@@ -18,29 +18,51 @@ namespace myRender.renderPac
         public void FillTriangle3D(Triangle3D triangle3D, Vector2 max2D)
         {
             var triangle = triangle3D.ProjectTo2D(max2D);
-            for (int y = (int)triangle.PointA.Y; y <= triangle.PointC.Y; y++)
+            int yStart = Math.Max((int)triangle.PointA.Y - 1, 0);
+            int yEnd = Math.Min((int)triangle.PointC.Y + 1, (int)max2D.Y);
+
+            for (int y = yStart; y <= yEnd; y++)
             {
                 if (y < triangle.PointB.Y)
                 {
                     int xa = (int)Interpolate(triangle.PointA.X, triangle.PointB.X, triangle.PointA.Y, triangle.PointB.Y, y);
                     int xb = (int)Interpolate(triangle.PointA.X, triangle.PointC.X, triangle.PointA.Y, triangle.PointC.Y, y);
-                    DrawHorizontalLine(xa, xb, y, triangle3D);
+                    DrawHorizontalLine(xa, xb, y, triangle3D, max2D);
                 }
                 else
                 {
                     int xa = (int)Interpolate(triangle.PointB.X, triangle.PointC.X, triangle.PointB.Y, triangle.PointC.Y, y);
                     int xb = (int)Interpolate(triangle.PointA.X, triangle.PointC.X, triangle.PointA.Y, triangle.PointC.Y, y);
-                    DrawHorizontalLine(xa, xb, y, triangle3D);
+                    DrawHorizontalLine(xa, xb, y, triangle3D, max2D);
                 }
             }
         }
 
-        private void DrawHorizontalLine(int x1, int x2, int y, Triangle3D triangle3D)
+        private void DrawHorizontalLine(int x1, int x2, int y, Triangle3D triangle3D, Vector2 max2D)
         {
+            // 根据x1和x2的相对大小进行互换
+            if (x1 > x2)
+            {
+                (x1, x2) = (x2, x1);
+            }
+
+            // 小值减少1，但要大于等于边界
+            x1 = Math.Max(x1 - 1, 0);
+
+            // 大值增加1，但要小于等于边界
+            x2 = Math.Min(x2 + 1, (int)max2D.X);
+
+            // 创建一个二维三角形
+            Triangle triangle = triangle3D.ProjectTo2D(max2D);
+
             for (int x = x1; x <= x2; x++)
             {
-                float depth = triangle3D.GetDepth(new Vector2(x, y));
-                _renderer.DrawPoint(x, y, depth);
+                // 检查点是否在三角形内
+                if (Triangle.Contains(new Vector2(x, y), triangle))
+                {
+                    float depth = triangle3D.GetDepth(new Vector2(x, y));
+                    _renderer.DrawPoint(x, y, depth);
+                }
             }
         }
 

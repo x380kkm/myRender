@@ -58,19 +58,34 @@ namespace Pac.Tool.Math
         }
 
         // 判断一个点是否在三角形内
+        public static bool Contains(Vector2 point, Triangle triangle)
+        {
+            Vector2 v0 = triangle.PointC - triangle.PointA;
+            Vector2 v1 = triangle.PointB - triangle.PointA;
+            Vector2 v2 = point - triangle.PointA;
+
+            float dot00 = Vector2.Dot(v0, v0);
+            float dot01 = Vector2.Dot(v0, v1);
+            float dot02 = Vector2.Dot(v0, v2);
+            float dot11 = Vector2.Dot(v1, v1);
+            float dot12 = Vector2.Dot(v1, v2);
+
+            float invDenom = 1 / (dot00 * dot11 - dot01 * dot01);
+            float u = (dot11 * dot02 - dot01 * dot12) * invDenom;
+            float v = (dot00 * dot12 - dot01 * dot02) * invDenom;
+
+            return (u >= 0) && (v >= 0) && (u + v <= 1);
+        }
+
+        // 重载的Contains方法，接受一个点和三个顶点作为参数
+        public static bool Contains(Vector2 point, Vector2 vertexA, Vector2 vertexB, Vector2 vertexC)
+        {
+            Triangle triangle = new Triangle(vertexA, vertexB, vertexC);
+            return Contains(point, triangle);
+        }
         public bool Contains(Vector2 point)
         {
-            // 计算向量的叉积
-            float Cross(Vector2 a, Vector2 b, Vector2 c)
-            {
-                return (b.X - a.X) * (c.Y - a.Y) - (b.Y - a.Y) * (c.X - a.X);
-            }
-
-            // 判断点与三角形的三个顶点构成的三个向量的叉积是否都在同一方向
-            var crossA = Cross(PointA, PointB, point);
-            var crossB = Cross(PointB, PointC, point);
-            var crossC = Cross(PointC, PointA, point);
-            return crossA >= 0 && crossB >= 0 && crossC >= 0 || crossA <= 0 && crossB <= 0 && crossC <= 0;
+            return Contains(point, PointA, PointB, PointC);
         }
 
         // 新增的方法，返回三角形对应点的深度
