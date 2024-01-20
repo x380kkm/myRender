@@ -7,11 +7,18 @@ namespace Pac.Tool.Math
         private Vector3 PointA { get; set; }
         private Vector3 PointB { get; set; }
         private Vector3 PointC { get; set; }
+        private Vector3 OriginalPointA { get; set; }
+        private Vector3 OriginalPointB { get; set; }
+        private Vector3 OriginalPointC { get; set; }    
         public static Vector3 Min3D { get; set; }
         public static Vector3 Max3D { get; set; }
 
         public Triangle3D(Vector3 pointA, Vector3 pointB, Vector3 pointC)
         {
+            OriginalPointA = pointA;
+            OriginalPointB = pointB;
+            OriginalPointC = pointC;
+            
             PointA = TransformToUnitCube(pointA);
             PointB = TransformToUnitCube(pointB);
             PointC = TransformToUnitCube(pointC);
@@ -54,6 +61,14 @@ namespace Pac.Tool.Math
             }
 
             return new Triangle(Project(PointA), Project(PointB), Project(PointC));
+        }
+        //三角形两边叉积计算法线
+        public Vector3 GetNormal()
+        {
+            Vector3 ab = OriginalPointB - OriginalPointA;
+            Vector3 ac = OriginalPointC - OriginalPointA;
+            Vector3 normal = Vector3.Cross(ab, ac);
+            return Vector3.Normalize(normal);
         }
 
         public float GetDepth()

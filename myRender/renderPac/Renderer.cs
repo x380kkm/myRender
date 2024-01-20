@@ -1,4 +1,5 @@
-﻿using System.Windows.Media;
+﻿using System.Numerics;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows;
 
@@ -26,7 +27,7 @@ namespace myRender.renderPac
 
         public ImageSource ImageSource => _bitmap;
 
-        public void DrawPoint(int x, int y, float depth)
+        public void DrawPoint(int x, int y, float depth,Vector3 normal,Vector3 lightVector)
         {
             if (x < 0 || x >= _colorData.GetLength(0) || y < 0 || y >= _colorData.GetLength(1))
             {
@@ -35,14 +36,20 @@ namespace myRender.renderPac
 
             if (depth <= _depthBuffer[x, y])
             {
-                _colorData[x, y] = DepthToColor(depth);
+                _colorData[x, y] = DepthToColor(normal,lightVector);
                 _depthBuffer[x, y] = depth;
             }
         }
 
-        private Color DepthToColor(float depth)
+        private Color DepthToColor(Vector3 normal, Vector3 lightVector)
         {
-            byte colorValue = (byte)(255-255*depth ); 
+            // 计算三角形的法线和光照矢量的点乘
+            float lightIntensity = Vector3.Dot(normal, lightVector);
+
+            // 如果点乘的结果为负，将其设为0
+            lightIntensity = System.Math.Max(0, lightIntensity);
+            // 使用点乘的结果和光照强度来计算颜色值
+            byte colorValue = (byte)(lightIntensity * 255);
             return Color.FromRgb(colorValue, colorValue, colorValue);
         }
         

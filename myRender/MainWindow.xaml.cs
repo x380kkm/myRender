@@ -17,7 +17,20 @@ namespace myRender
         {
             InitializeComponent();
             var renderer = new Renderer((int)MyCanvas.Width, (int)MyCanvas.Height);
-            var class2 = new Class2(renderer);
+           //// 定义角度
+           //double theta = Math.PI / 4; //
+           //double phi = Math.PI / -6; // 
+
+           //// 将角度转换为光照向量
+           //Vector3 lightVector = new Vector3(
+           //    (float)(Math.Sin(theta) * Math.Cos(phi)), 
+           //    (float)(Math.Sin(theta) * Math.Sin(phi)), 
+           //    (float)Math.Cos(theta)
+           //);
+           Vector3 lightVector = new Vector3(0, 0,1);
+            lightVector = Vector3.Normalize(lightVector);
+
+            var class2 = new Class2(renderer, lightVector);
             MyImage.Source = renderer.ImageSource; // 将 Renderer 对象的 ImageSource 属性设置为 Image 元素的 Source 属性
 
             // 创建一个 ObjFileReader 实例并读取 .obj 文件
@@ -46,7 +59,8 @@ namespace myRender
             var colorGradient = new ColorGradient(startColor, endColor);
 
             // 创建一个 ModelRenderer 实例并渲染模型
-            var modelRenderer = new ModelRenderer(renderer, (int)MyCanvas.Width / 8, (int)MyCanvas.Height / 8);
+            var modelRenderer =
+                new ModelRenderer(renderer, (int)MyCanvas.Width / 8, (int)MyCanvas.Height / 8, lightVector);
             modelRenderer.RenderModel(model);
 
             // 调用 Renderer 的 Render 方法来更新图像

@@ -73,9 +73,10 @@ namespace Pac.Tool.Math
             float invDenom = 1 / (dot00 * dot11 - dot01 * dot01);
             float u = (dot11 * dot02 - dot01 * dot12) * invDenom;
             float v = (dot00 * dot12 - dot01 * dot02) * invDenom;
-            float epsilon = 0.05f; // 定义一个小的偏移量
+            float epsilon = 0.08f; // 定义一个小的偏移量
             return (u >= -epsilon) && (v >= -epsilon) && (u + v <= 1 + epsilon);
         }
+        //获取原三角形法线
 
         // 重载的Contains方法，接受一个点和三个顶点作为参数
         public static bool Contains(Vector2 point, Vector2 vertexA, Vector2 vertexB, Vector2 vertexC)

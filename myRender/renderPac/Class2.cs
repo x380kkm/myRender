@@ -7,12 +7,14 @@ namespace myRender.renderPac
     public class Class2
     {
         private Renderer _renderer;
-        private Class1 _class1;
+        private Vector3 _lightVector;
+       //private Class1 _class1;
 
-        public Class2(Renderer renderer)
+        public Class2(Renderer renderer,Vector3 lightVector)
         {
             this._renderer = renderer;
-            this._class1 = new Class1(_renderer);
+            this._lightVector = lightVector;
+            //this._class1 = new Class1(_renderer);
         }
 
         public void FillTriangle3D(Triangle3D triangle3D, Vector2 max2D)
@@ -76,7 +78,7 @@ namespace myRender.renderPac
                 if (Triangle.Contains(new Vector2(x, y), triangle))
                 {
                     float depth = triangle3D.GetDepth();
-                    _renderer.DrawPoint(x, y, depth);
+                    _renderer.DrawPoint(x, y, depth,triangle3D.GetNormal(),_lightVector);
                 }
             }
         }

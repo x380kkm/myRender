@@ -12,9 +12,9 @@ namespace myRender.renderPac
         private Vector2 _screenSize;
         private ObjModel _model;
 
-        public ModelRenderer(Renderer renderer, int screenWidth, int screenHeight)
+        public ModelRenderer(Renderer renderer, int screenWidth, int screenHeight, Vector3 lightVector)
         {
-            _class2 = new Class2(renderer);
+            _class2 = new Class2(renderer, lightVector);
             _screenSize = new Vector2(screenWidth, screenHeight);
         }
 
