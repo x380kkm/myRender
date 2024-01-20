@@ -26,14 +26,14 @@ namespace Pac.Tool.Math
         {
             _triangle3D = triangle3D;
             var triangle2D = triangle3D.ProjectTo2D(new Vector2(1, 1));
-            // 对三个顶点按照y坐标进行排序
-            var points = new[] { triangle2D.PointA, triangle2D.PointB, triangle2D.PointC }
-                .OrderBy(p => p.Y)
-                .ToArray();
+           // // 对三个顶点按照y坐标进行排序
+           // var points = new[] { triangle2D.PointA, triangle2D.PointB, triangle2D.PointC }
+           //     .OrderBy(p => p.Y)
+           //     .ToArray();
 
-            PointA = points[0];
-            PointB = points[1];
-            PointC = points[2];
+           // PointA = points[0];
+           // PointB = points[1];
+           // PointC = points[2];
         }
 
         // 根据给定的y值计算交点的x坐标
@@ -94,5 +94,33 @@ namespace Pac.Tool.Math
         {
             return _triangle3D.GetDepth();
         }
+        
+        //插值比例计算
+        
+        public Vector3 GetCoord(Vector2 point)
+        {
+            Vector2 v0 = PointC - PointA;
+            Vector2 v1 = PointB - PointA;
+            Vector2 v2 = point - PointA;
+
+            float d00 = Vector2.Dot(v0, v0);
+            float d01 = Vector2.Dot(v0, v1);
+            float d11 = Vector2.Dot(v1, v1);
+            float d20 = Vector2.Dot(v2, v0);
+            float d21 = Vector2.Dot(v2, v1);
+
+            float denom = d00 * d11 - d01 * d01;
+
+            float v = (d11 * d20 - d01 * d21) / denom;
+            float w = (d00 * d21 - d01 * d20) / denom;
+            float u = 1.0f - v - w;
+
+            return new Vector3(u, v, w);
+        }
+
+        
+        
+        
+        
     }
 }

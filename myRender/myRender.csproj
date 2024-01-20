@@ -14,10 +14,15 @@
 
     <ItemGroup>
       <Content Include="bin\Debug\net8.0-windows\read\african_head.obj" />
+      <Content Include="bin\Debug\net8.0-windows\read\african_head_diffuse.tga" />
     </ItemGroup>
 
     <ItemGroup>
       <Folder Include="Test\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="SixLabors.ImageSharp" Version="3.1.2" />
     </ItemGroup>
 
 </Project>

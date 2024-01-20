@@ -10,26 +10,42 @@ namespace Pac.Tool.Math
         private Vector3 OriginalPointA { get; set; }
         private Vector3 OriginalPointB { get; set; }
         private Vector3 OriginalPointC { get; set; }    
+        private Vector3 TextureU { get; set; }
+        private Vector3 TextureV { get; set; }
+
         public static Vector3 Min3D { get; set; }
         public static Vector3 Max3D { get; set; }
 
-        public Triangle3D(Vector3 pointA, Vector3 pointB, Vector3 pointC)
+        public Triangle3D(Vector3 pointA, Vector3 pointB, Vector3 pointC,Vector3 textureU,Vector3 textureV)
         {
+            
             OriginalPointA = pointA;
             OriginalPointB = pointB;
             OriginalPointC = pointC;
-            
-            PointA = TransformToUnitCube(pointA);
-            PointB = TransformToUnitCube(pointB);
-            PointC = TransformToUnitCube(pointC);
-            // 对三个顶点按照y坐标进行排序
-            var points = new[] { pointA, pointB, pointC }
-                .OrderBy(p => p.Y)
-                .ToArray();
+            TextureU = textureU;
+            TextureV = textureV;
 
-            PointA = TransformToUnitCube(points[0]);
-            PointB = TransformToUnitCube(points[1]);
-            PointC = TransformToUnitCube(points[2]);
+            
+            // 创建一个包含顶点和对应的纹理坐标的临时数据结构
+            var pointsWithTextures = new[]
+            {
+                new { Point = pointA, Texture = textureU },
+                new { Point = pointB, Texture = textureV },
+                new { Point = pointC, Texture = textureV }
+            };
+
+            // 对这个数据结构进行排序
+            var sortedPointsWithTextures = pointsWithTextures.OrderBy(p => p.Point.Y).ToArray();
+
+            // 将排序后的顶点和纹理坐标分别赋值给PointA、PointB、PointC和TextureU、TextureV
+            PointA = TransformToUnitCube(sortedPointsWithTextures[0].Point);
+            TextureU = sortedPointsWithTextures[0].Texture;
+
+            PointB = TransformToUnitCube(sortedPointsWithTextures[1].Point);
+            TextureV = sortedPointsWithTextures[1].Texture;
+
+            PointC = TransformToUnitCube(sortedPointsWithTextures[2].Point);
+            TextureV = sortedPointsWithTextures[2].Texture;
         
         }
         private Vector3 TransformToUnitCube(Vector3 point)
@@ -89,5 +105,16 @@ namespace Pac.Tool.Math
             }
             return normalizedZ;
         }
+        //计算贴图坐标
+        public Vector2 UVmap(Vector3 weight)
+        {
+                // 将权重分别乘以三个顶点的贴图坐标，然后将结果相加
+                Vector2 result = weight.X * new Vector2(TextureU.X, TextureV.X)
+                                 + weight.Y * new Vector2(TextureU.Y, TextureV.Y)
+                                 + weight.Z * new Vector2(TextureU.Z, TextureV.Z);
+                return result;
+        
+        }
+
     }
 }

@@ -8,5 +8,6 @@
 //------------------------------------------------------------------------------
 
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("bin/debug/net8.0-windows/read/african_head.obj")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("bin/debug/net8.0-windows/read/african_head_diffuse.tga")]
 
 

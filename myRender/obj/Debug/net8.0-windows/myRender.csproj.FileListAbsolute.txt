@@ -23,3 +23,4 @@ C:\Users\30705\RiderProjects\myRender\myRender\bin\Debug\net8.0-windows\Pac.pdb
 C:\Users\30705\RiderProjects\myRender\myRender\obj\Debug\net8.0-windows\myRender.csproj.AssemblyReference.cache
 C:\Users\30705\RiderProjects\myRender\myRender\obj\Debug\net8.0-windows\myRender.csproj.CopyComplete
 C:\Users\30705\RiderProjects\myRender\myRender\obj\Debug\net8.0-windows\myRender_Content.g.cs
+C:\Users\30705\RiderProjects\myRender\myRender\bin\Debug\net8.0-windows\SixLabors.ImageSharp.dll

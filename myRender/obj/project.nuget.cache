@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "SPR2keRSgrVz/U2OzwNTUliSTczJreufBB3YMFX3Tw0G4MUD5X7JEEO/8lJCOf0TWIPk7SPm1ukFijyNh0CWHA==",
+  "dgSpecHash": "cvTd9hb9iTT6U5zL6aa8w7giUhZmzAdLpJHIoTTdQ3pIs3jhloDIyXHyFS+06G7gheBTrnPbJc/iXl0M7a3swQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\30705\\RiderProjects\\myRender\\myRender\\myRender.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\30705\\.nuget\\packages\\sixlabors.imagesharp\\3.1.2\\sixlabors.imagesharp.3.1.2.nupkg.sha512"
+  ],
   "logs": []
 }
