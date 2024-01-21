@@ -1,1 +1,1 @@
-Only capable of orthogonal projection, flawed, and a rudimentary toy that's hard to further develop.
+Only has capablilty of orthogonal projection, flawed, and a rudimentary toy. hard to further develop.
