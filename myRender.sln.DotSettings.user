@@ -1,4 +1,14 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=02da323b_002D0b88_002D45b7_002Da991_002D6c48c65c01fe/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="TestAreaBasedWeightCalculation3D_2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;MSTest::22124AED-54E2-4D73-970E-D75579AE789E::net8.0::LinearCalculationsTests.TriangleCalculationsTests.TestAreaBasedWeightCalculation3D_2&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=13d773a2_002D9541_002D4aef_002D83a1_002D7ee9f395e1f8/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="TestAreaBasedWeightCalculation3D_2 #3" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;MSTest::22124AED-54E2-4D73-970E-D75579AE789E::net8.0::LinearCalculationsTests.TriangleCalculationsTests.TestAreaBasedWeightCalculation3D_2&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
 	
 	
 	
@@ -8,10 +18,18 @@
     &lt;TestId&gt;MSTest::22124AED-54E2-4D73-970E-D75579AE789E::net8.0::LinearCalculationsTests.AreaBasedWeightStrategyTests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a2fccf55_002D5a80_002D4791_002Db3da_002D30c1a9c63215/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="TestAreaBasedWeightCalculation3D_2 #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;MSTest::22124AED-54E2-4D73-970E-D75579AE789E::net8.0::LinearCalculationsTests.TriangleCalculationsTests.TestAreaBasedWeightCalculation3D_2&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=dd567e7b_002Da79f_002D495e_002Da3e5_002D0d090bed5a77/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="会话" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;MSTest::22124AED-54E2-4D73-970E-D75579AE789E::net8.0::LinearCalculationsTests.AreaBasedWeightStrategyTests&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;MSTest::22124AED-54E2-4D73-970E-D75579AE789E::net8.0::LinearCalculationsTests.TriangleTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;MSTest::22124AED-54E2-4D73-970E-D75579AE789E::net8.0::LinearCalculationsTests.TriangleNormalCalculatorMathTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;MSTest::22124AED-54E2-4D73-970E-D75579AE789E::net8.0::LinearCalculationsTests.TriangleCalculationsTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;MSTest::22124AED-54E2-4D73-970E-D75579AE789E::net8.0::LinearCalculationsTests.TestFloatWeightedAverageCalculator&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	
