@@ -7,8 +7,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Triangle\2D\" />
-      <Folder Include="Triangle\3D\" />
+      <Folder Include="Triangle\2D\Implementations\" />
+      <Folder Include="Vertex\Models\" />
     </ItemGroup>
 
 </Project>
