@@ -1,4 +1,5 @@
-﻿using MyMath.Vertex.Interfaces;
+﻿// I2DTriangleWeightedAverageCalculator.cs
+using MyMath.Vertex.Interfaces;
 
 namespace MyMath.Triangle._2D.Interfaces
 {

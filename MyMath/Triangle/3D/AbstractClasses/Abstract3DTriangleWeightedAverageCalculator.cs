@@ -1,4 +1,5 @@
-﻿using System.Numerics;
+﻿// Abstract3DTriangleWeightedAverageCalculator.cs
+using System.Numerics;
 using MyMath.Triangle._3D.Interfaces;
 using MyMath.LinearCalculations.WeightedAverageCalculators.Interfaces;
 
@@ -8,7 +9,8 @@ namespace MyMath.Triangle._3D.AbstractClasses
     {
         protected IWeightedAverageCalculator<float, TData> weightedAverageCalculator;
 
-        public abstract TData CalculateWeightedAverageAtVertex(IEnumerable<(Vector3 vertex, TData data)> vertexData, Vector3 targetVertex);
+        public abstract IEnumerable<float> CalculateWeights(IEnumerable<Vector3> vertices, Vector3 targetVertex);
+        public abstract TData CalculateWeightedAverage(IEnumerable<(float weight, TData data)> weightedData);
 
         public void SetWeightedAverageCalculator(IWeightedAverageCalculator<float, TData> calculator)
         {

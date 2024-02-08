@@ -1,0 +1,12 @@
+C:\Users\30705\RiderProjects\myRender\MyMath\bin\Debug\net8.0\MyMath.deps.json
+C:\Users\30705\RiderProjects\myRender\MyMath\bin\Debug\net8.0\MyMath.dll
+C:\Users\30705\RiderProjects\myRender\MyMath\bin\Debug\net8.0\MyMath.pdb
+C:\Users\30705\RiderProjects\myRender\MyMath\obj\Debug\net8.0\MyMath.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\30705\RiderProjects\myRender\MyMath\obj\Debug\net8.0\MyMath.AssemblyInfoInputs.cache
+C:\Users\30705\RiderProjects\myRender\MyMath\obj\Debug\net8.0\MyMath.AssemblyInfo.cs
+C:\Users\30705\RiderProjects\myRender\MyMath\obj\Debug\net8.0\MyMath.csproj.CoreCompileInputs.cache
+C:\Users\30705\RiderProjects\myRender\MyMath\obj\Debug\net8.0\MyMath.sourcelink.json
+C:\Users\30705\RiderProjects\myRender\MyMath\obj\Debug\net8.0\MyMath.dll
+C:\Users\30705\RiderProjects\myRender\MyMath\obj\Debug\net8.0\refint\MyMath.dll
+C:\Users\30705\RiderProjects\myRender\MyMath\obj\Debug\net8.0\MyMath.pdb
+C:\Users\30705\RiderProjects\myRender\MyMath\obj\Debug\net8.0\ref\MyMath.dll

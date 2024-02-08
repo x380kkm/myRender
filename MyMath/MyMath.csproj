@@ -7,7 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Triangle\2D\Implementations\" />
+      <Folder Include="LinearCalculations\TriangleAreaCalculator\Implementations\" />
       <Folder Include="Vertex\Models\" />
     </ItemGroup>
 

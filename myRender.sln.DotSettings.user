@@ -1,23 +1,20 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=3acc5b4c_002D66c4_002D4700_002D8c5a_002Dade9ed9cdde8/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="TestFillTriangle3D #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	
+	
+	
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=9c2808bd_002D1d27_002D49fa_002D9781_002D5f5daaffca4e/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="FloatWeightedAverageCalculatorTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;xUnit::F97CF852-5FF9-4740-ACDB-E901E3E84311::net8.0-windows::myRender.Test.Class2Test.TestFillTriangle3D&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;MSTest::22124AED-54E2-4D73-970E-D75579AE789E::net8.0::LinearCalculationsTests.FloatWeightedAverageCalculatorTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;MSTest::22124AED-54E2-4D73-970E-D75579AE789E::net8.0::LinearCalculationsTests.AreaBasedWeightStrategyTests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=491cfebe_002Deacc_002D429c_002Da358_002D82890c3689a2/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="&amp;lt;myRender&amp;gt; 中的所有测试 #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;Project Location="C:\Users\30705\RiderProjects\myRender\myRender" Presentation="&amp;lt;myRender&amp;gt;" /&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=6d679138_002D74d5_002D4a07_002Da98c_002Db5e0f24e010c/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="TestFillTriangle3D" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=dd567e7b_002Da79f_002D495e_002Da3e5_002D0d090bed5a77/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="会话" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;xUnit::F97CF852-5FF9-4740-ACDB-E901E3E84311::net8.0-windows::myRender.Test.Class2Test.TestFillTriangle3D&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;MSTest::22124AED-54E2-4D73-970E-D75579AE789E::net8.0::LinearCalculationsTests.AreaBasedWeightStrategyTests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=c9dccc7a_002D5166_002D4b84_002Da402_002Dbd2b710b8638/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="&amp;lt;myRender&amp;gt; 中的所有测试" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;Project Location="C:\Users\30705\RiderProjects\myRender\myRender" Presentation="&amp;lt;myRender&amp;gt;" /&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d27395d6_002D8711_002D4931_002D86e0_002D0a5524624533/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="&amp;lt;myRender&amp;gt; 中的所有测试 #3" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;Project Location="C:\Users\30705\RiderProjects\myRender\myRender" Presentation="&amp;lt;myRender&amp;gt;" /&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=e6273185_002Dc455_002D4411_002Db4ed_002D3c258d92f973/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="&amp;lt;myRender&amp;gt; 中的所有测试 #4" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;Project Location="C:\Users\30705\RiderProjects\myRender\myRender" Presentation="&amp;lt;myRender&amp;gt;" /&gt;&#xD;
-&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
+	
+	
+	
+	<s:Boolean x:Key="/Default/UnloadedProject/UnloadedProjects/=c267dd58_002Da090_002D4604_002D8ca1_002D605472ae772e_0023Pac/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/UnloadedProject/UnloadedProjects/=f97cf852_002D5ff9_002D4740_002Dacdb_002De901e3e84311_0023myRender/@EntryIndexedValue">True</s:Boolean></wpf:ResourceDictionary>
