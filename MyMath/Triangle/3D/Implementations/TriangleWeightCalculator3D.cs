@@ -1,7 +1,7 @@
 ﻿using System.Numerics;
 using MyMath.LinearCalculations.TriangleWeightCalculator.AbstractClasses;
-using MyMath.LinearCalculations.TriangleWeightCalculator.Implementations;
 using MyMath.Triangle._3D.Interfaces;
+using MyMath.Triangle._3D.Implementations;
 
 namespace MyMath.Triangle._3D.Implementations
 {
@@ -9,7 +9,7 @@ namespace MyMath.Triangle._3D.Implementations
     {
         public TriangleWeightCalculator3D()
         {
-            SetStrategy(new AreaBasedWeightStrategy());
+            SetStrategy(new AreaBasedWeightStrategy3D());
         }
     }
 }
