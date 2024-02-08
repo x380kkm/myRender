@@ -11,6 +11,7 @@
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=dd567e7b_002Da79f_002D495e_002Da3e5_002D0d090bed5a77/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="会话" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;MSTest::22124AED-54E2-4D73-970E-D75579AE789E::net8.0::LinearCalculationsTests.AreaBasedWeightStrategyTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;MSTest::22124AED-54E2-4D73-970E-D75579AE789E::net8.0::LinearCalculationsTests.TriangleTests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	
