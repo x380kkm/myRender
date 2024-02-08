@@ -1,6 +1,6 @@
-﻿using MyMath.LinearCalculations.WeightedAverageCalculators.Interfaces;
+﻿using MyMath.LinearCalculations.WeightedDataCalculators.Interfaces;
 
-namespace MyMath.LinearCalculations.WeightedAverageCalculators.AbstractClasses
+namespace MyMath.LinearCalculations.WeightedDataCalculators.AbstractClasses
 {
     public abstract class AbstractWeightedAverageCalculator<TWeight, TData> : IWeightedAverageCalculator<TWeight, TData>
         where TWeight : struct, IComparable, IComparable<TWeight>, IConvertible, IEquatable<TWeight>, IFormattable

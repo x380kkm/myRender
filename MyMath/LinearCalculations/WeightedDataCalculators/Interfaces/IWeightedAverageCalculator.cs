@@ -1,4 +1,4 @@
-﻿namespace MyMath.LinearCalculations.WeightedAverageCalculators.Interfaces
+﻿namespace MyMath.LinearCalculations.WeightedDataCalculators.Interfaces
 {
     public interface IWeightedAverageCalculator<TWeight, TData>
     {

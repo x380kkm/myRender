@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using MyMath.LinearCalculations.WeightedAverageCalculators.Implementations;
 using System.Collections.Generic;
+using MyMath.LinearCalculations.WeightedDataCalculators.Implementations;
 
 namespace LinearCalculationsTests
 {

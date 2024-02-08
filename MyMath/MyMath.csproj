@@ -9,7 +9,8 @@
     <ItemGroup>
       <Folder Include="LinearCalculations\TriangleAreaCalculator\Implementations\" />
       <Folder Include="LinearCalculations\TriangleWeightCalculator\Implementations\" />
-      <Folder Include="Vertex\Models\" />
+      <Folder Include="Triangle\2D\AbstractClasses\" />
+      <Folder Include="Triangle\3D\AbstractClasses\" />
     </ItemGroup>
 
 </Project>
