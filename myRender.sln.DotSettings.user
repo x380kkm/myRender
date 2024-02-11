@@ -39,6 +39,8 @@
     &lt;TestId&gt;MSTest::22124AED-54E2-4D73-970E-D75579AE789E::net8.0::LinearCalculationsTests.UvCoordinateTests.TestCalculateTargetData2DWithUvCoordinates&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;MSTest::22124AED-54E2-4D73-970E-D75579AE789E::net8.0::LinearCalculationsTests.DiffuseLightCalculatorTests&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;MSTest::22124AED-54E2-4D73-970E-D75579AE789E::net8.0::LinearCalculationsTests.TrianglePointSorter2DTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;MSTest::22124AED-54E2-4D73-970E-D75579AE789E::net8.0::LinearCalculationsTests.BoundingBox2DTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;MSTest::22124AED-54E2-4D73-970E-D75579AE789E::net8.0::LinearCalculationsTests.BoundingBoxFromTriangleVertices2DTests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	
