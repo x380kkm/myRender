@@ -20,6 +20,7 @@ public class Vertex3DWeightDataProcessor : AbstractVertexWeightDataProcessor<Vec
     /// Constructor that initializes the triangle weight calculator.
     /// 初始化三角形权重计算器的构造函数。
     /// </summary>
+    /// <param name="triangleWeightCalculator">The 3D triangle weight calculator. 3D三角形权重计算器。</param>
     public Vertex3DWeightDataProcessor(I3DTriangleWeightCalculator triangleWeightCalculator)
         : base(new FloatWeightedAverageCalculator())
     {
@@ -29,6 +30,8 @@ public class Vertex3DWeightDataProcessor : AbstractVertexWeightDataProcessor<Vec
     /// Calculates the weights for a collection of 3D vertices.
     /// 计算一组3D顶点的权重。
     /// </summary>
+    /// <param name="vertices">The collection of 3D vertices. 3D顶点的集合。</param>
+    /// <param name="targetVertex">The target vertex. 目标顶点。</param>
     public override IEnumerable<float> CalculateWeights(IEnumerable<Vector3> vertices, Vector3 targetVertex)
     {
         var verticesList = new List<Vector3>(vertices);
@@ -42,6 +45,11 @@ public class Vertex3DWeightDataProcessor : AbstractVertexWeightDataProcessor<Vec
     /// Calculates the target data for a collection of 3D vertices and data.
     /// 计算一组3D顶点和数据的目标数据。
     /// </summary>
+    /// <param name="vertices">The collection of 3D vertices. 3D顶点的集合。</param>
+    /// <param name="data">The data associated with the vertices. 与顶点相关联的数据。</param>
+    /// <param name="targetVertex">The target vertex. 目标顶点。</param>
+    /// <param name="weightedAverageCalculator">The weighted average calculator. 加权平均计算器。</param>
+    /// <returns>The target data. 目标数据。</returns>
     public override float CalculateTargetData(IEnumerable<Vector3> vertices, IEnumerable<float> data, Vector3 targetVertex, IWeightedAverageCalculator<float, float> weightedAverageCalculator)
     {
         var weights = CalculateWeights(vertices, targetVertex);

@@ -7,6 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <Folder Include="Coordinates\3D\" />
       <Folder Include="LinearCalculations\TriangleAreaCalculator\Implementations\" />
       <Folder Include="LinearCalculations\TriangleWeightCalculator\Implementations\" />
       <Folder Include="Triangle\2D\AbstractClasses\" />

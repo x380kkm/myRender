@@ -19,6 +19,7 @@ public class Vertex2DWeightDataProcessor : AbstractVertexWeightDataProcessor<Vec
     /// Implements the IVertex2DWeightDataProcessor interface for processing 2D vertex weight data.
     /// 实现IVertex2DWeightDataProcessor接口，用于处理2D顶点权重数据。
     /// </summary>
+    ///  <param name="triangleWeightCalculator">The 2D triangle weight calculator. 2D三角形权重计算器。</param>
     public Vertex2DWeightDataProcessor(I2DTriangleWeightCalculator triangleWeightCalculator)
         : base(new FloatWeightedAverageCalculator())
     {
@@ -28,6 +29,9 @@ public class Vertex2DWeightDataProcessor : AbstractVertexWeightDataProcessor<Vec
     /// Calculates the weights for a collection of 2D vertices.
     /// 计算一组2D顶点的权重。
     /// </summary>
+    /// <param name="vertices">The collection of 2D vertices. 2D顶点的集合。</param>
+    /// <param name="targetVertex">The target vertex. 目标顶点。</param>
+    /// <returns>The weights of the vertices. 顶点的权重。</returns>
     public override IEnumerable<float> CalculateWeights(IEnumerable<Vector2> vertices, Vector2 targetVertex)
     {
         var verticesList = new List<Vector2>(vertices);
@@ -41,6 +45,11 @@ public class Vertex2DWeightDataProcessor : AbstractVertexWeightDataProcessor<Vec
     /// Calculates the target data for a collection of 2D vertices and data.
     /// 计算一组2D顶点和数据的目标数据。
     /// </summary>
+    /// <param name="vertices">The collection of 2D vertices. 2D顶点的集合。</param>
+    /// <param name="data">The data associated with the vertices. 与顶点相关联的数据。</param>
+    /// <param name="targetVertex">The target vertex. 目标顶点。</param>
+    /// <param name="weightedAverageCalculator">The weighted average calculator. 加权平均计算器。</param>
+    /// <returns>The target data. 目标数据。</returns>
     public override float CalculateTargetData(IEnumerable<Vector2> vertices, IEnumerable<float> data, Vector2 targetVertex, IWeightedAverageCalculator<float, float> weightedAverageCalculator)
     {
         var weights = CalculateWeights(vertices, targetVertex);

@@ -13,6 +13,11 @@ public class AreaBasedWeightStrategy3D : IWeightCalculationStrategy<Vector3>
     /// Calculates the weight of a triangle given its three vertices and a target point.
     /// 根据三角形的三个顶点和一个目标点计算其权重。
     /// </summary>
+    /// <param name="pointA">The first vertex of the triangle. 三角形的第一个顶点。</param>
+    /// <param name="pointB">The second vertex of the triangle. 三角形的第二个顶点。</param>
+    /// <param name="pointC">The third vertex of the triangle. 三角形的第三个顶点。</param>
+    /// <param name="targetPoint">The target point. 目标点。</param>
+    /// <returns>The weights of the vertices. 顶点的权重。</returns>
     public (float, float, float) CalculateWeight(Vector3 pointA, Vector3 pointB, Vector3 pointC, Vector3 targetPoint)
     {
         var calculator = new TriangleAreaCalculator3D();
