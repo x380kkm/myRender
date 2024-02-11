@@ -1,4 +1,6 @@
-﻿using MyMath.Coordinates._2D.Point.Implementations;
+﻿using System;
+using MyMath.Coordinates._2D.Point.Implementations;
+using MyMath.Triangle._2D.Interfaces;
 
 namespace MyMath.Triangle._2D.Implementations
 {
@@ -8,7 +10,7 @@ namespace MyMath.Triangle._2D.Implementations
     /// The bounding box is created from exactly three points, and it represents the smallest rectangle that contains all the points.
     /// 包围盒是由恰好三个点创建的，它代表包含所有点的最小矩形。
     /// </summary>
-    public class BoundingBoxFromTriangleVertices2D : BoundingBox2D
+    public class BoundingBoxFromTriangleVertices2D : BoundingBox2D, IBoundingBoxFromTriangleVertices2D
     {
         /// <summary>
         /// Creates a bounding box that contains all the given points of a triangle.
