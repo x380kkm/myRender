@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LinearCalculationsTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f5d26c88c81bbbcd949565eec01624309201f224")]
 [assembly: System.Reflection.AssemblyProductAttribute("LinearCalculationsTests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LinearCalculationsTests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
