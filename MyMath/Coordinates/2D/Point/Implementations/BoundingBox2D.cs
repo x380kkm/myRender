@@ -12,14 +12,15 @@ namespace MyMath.Coordinates._2D.Point.Implementations
     public class BoundingBox2D : IBoundingBox2D
     {
         /// <summary>
-        /// Creates a bounding box that contains all the given points.
-        /// 创建一个包含所有给定点的包围盒。
-        /// The bounding box is represented by the minimum and maximum x and y coordinates of the points.
-        /// 包围盒由点的最小和最大x和y坐标表示。
+        /// Creates a bounding box from given points.
+        /// 从给定点创建包围盒。
         /// </summary>
-        /// <param name="points">An array of 2D points. Each point is represented by a tuple of two floats, where the first float is the x coordinate and the second float is the y coordinate.</param>
-        /// <returns>A tuple of four floats representing the minimum and maximum x and y coordinates of the bounding box.</returns>
-        public (float MinX, float MaxX, float MinY, float MaxY) CreateBoundingBox((float x, float y)[] points)
+        /// <param name="points">An array of 2D points.</param>
+        /// <returns>
+        /// A tuple of four floats (MinX, MaxX, MinY, MaxY) representing the bounding box.
+        /// 一个由四个浮点数组成的元组（MinX，MaxX，MinY，MaxY）代表包围盒。
+        /// </returns>
+        public virtual (float MinX, float MaxX, float MinY, float MaxY) CreateBoundingBox((float x, float y)[] points)
         {
             float minX = points.Min(point => point.x);
             float maxX = points.Max(point => point.x);

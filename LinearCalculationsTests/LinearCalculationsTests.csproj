@@ -20,4 +20,16 @@
       <ProjectReference Include="..\MyMath\MyMath.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Compile Remove="done\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="done\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="done\**" />
+    </ItemGroup>
+
 </Project>
